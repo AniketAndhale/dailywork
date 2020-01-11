@@ -1,0 +1,427 @@
+package aniket12;
+
+public class Empp {
+	private int id;
+	private String name;
+	private String address;
+	private double salary;
+	private double phone;
+	public Empp()
+	{
+		
+	}
+	
+	public Empp(int id, String name, String address, double salary, double phone) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.salary = salary;
+		this.phone = phone;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public double getPhone() {
+		return phone;
+	}
+
+	public void setPhone(double phone) {
+		this.phone = phone;
+	}
+
+	@Override
+	public String toString() {
+		return "Empp [id=" + id + ", name=" + name + ", address=" + address + ", salary=" + salary + ", phone=" + phone
+				+ ", getId()=" + getId() + ", getName()=" + getName() + ", getAddress()=" + getAddress()
+				+ ", getSalary()=" + getSalary() + ", getPhone()=" + getPhone() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+	
+}
+	//public String toString() {
+	//return id+":"+name+":"+address+":"+salary":"+phone;
+	//}
+**********************************
+package aniket12;
+import java.util.ArrayList;
+public class EmpArr {
+
+	
+	public static void main(String[] args) {
+		ArrayList<Empp> list =new ArrayList<Empp>();
+		Empp emp1 = new Empp(201,"Aniket","maharashtra",22000,703857482);
+		Empp emp2 =new Empp(202,"Anu","Andhra",23000,9763530194L);
+		Empp emp3 =new Empp(203,"Abin","maharashtra",240000,976353019);
+		Empp emp4 =new Empp(204,"Abdus","maharashtra",22000,9763530194L);
+		Empp emp5 =new Empp(205,"sai","maharashtra",250000,976353052l);
+		
+		list.add(emp1);
+		list.add(emp2);
+		list.add(emp3);
+		list.add(emp4);
+		list.add(emp5);
+		System.out.println(list);
+	//	for(Empp em:list) {
+		//	System.out.println(em);
+	//	}
+		
+	}
+
+	
+
+}
+**********************************************************************************************************************************
+Sorting 
+
+
+package aniket12;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Arrays;
+public class Sorta {
+	public static void main(String[] args) {
+		ArrayList<Integer> list =new ArrayList<Integer>(Arrays.asList(12,45,85,52));
+		System.out.println(list);
+		Collections.sort(list);
+		System.out.println(list);
+	}
+
+}
+
+************************************************************************************************************************************
+package com.cts.activity.bean;
+
+public class Employee {
+
+	private int id;
+	private String name;
+	private String address;
+	private int age;
+	private double phone;
+	private double salary;
+
+	public Employee() {
+
+	}
+
+	public Employee(int id, String name, String address, int age, double phone, double salary) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.age = age;
+		this.phone = phone;
+		this.salary = salary;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public double getPhone() {
+		return phone;
+	}
+
+	public void setPhone(double phone) {
+		this.phone = phone;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	@Override
+	public String toString() {
+		return id + " : " + name + " : " + address + " : " + age + "  : " + phone + " : " + salary;
+	}
+
+}
+**********************************ssssssssssssssssssssssssssssssssss************************************
+package com.cts.activity.daoimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.cts.activity.bean.Employee;
+import com.cts.activity.dao.EmployeeDAO;
+
+public class EmployeeDAOImpl implements EmployeeDAO {
+
+	static ArrayList<Employee> list = null;
+	static {
+		list = new ArrayList<Employee>();
+		Employee emp1 = new Employee(101, "Abin", "Hydrabad", 22, 6678687687L, 6786868.00);
+		Employee emp2 = new Employee(102, "Anu", "Chennai", 21, 345354354L, 45464646.00);
+		list.add(emp1);
+		list.add(emp2);
+	}
+
+	@Override
+	public boolean addEmployee(Employee employee) {
+
+		try {
+			list.add(employee);
+			return true;
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateEmployee(Employee employee) {
+		for(Employee emp:list) {
+			if(emp.getId()==employee.getId())
+			{
+				list.set(list.indexOf(emp),employee);
+				return false;
+			}
+		}
+	
+	}
+
+	@Override
+	public boolean deleteEmployee(Employee employee) {
+		try {
+			list.remove(employee);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+		
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+
+		for (Employee employee : list) {
+			if (employee.getId() == id) {
+				return employee;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllEmployees() {
+	
+		return list;
+	}
+	
+	
+
+}
+************************************************SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS***************************
+package com.cts.activity.main;
+
+import java.util.List;
+
+import com.cts.activity.bean.Employee;
+import com.cts.activity.dao.EmployeeDAO;
+import com.cts.activity.daoimpl.EmployeeDAOImpl;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		
+		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		
+//		Employee emp = employeeDAO.getEmployeeById(1);
+//		System.out.println(emp);
+		
+		Employee employee = new Employee(103, "Akhil", "Pune", 22, 567576576L, 456456.00);
+		
+		boolean status = employeeDAO.addEmployee(employee);
+//		
+//		if(status)
+//		{
+//			System.out.println("Employee Added Successfully");
+//		}else
+//		{
+//			System.out.println("Try Again");
+//		}
+		//delete the emp 
+		//Employee deleteEmployee=employeeDAO.getEmployeeById(102);
+	
+		
+		//update employee
+		
+		List<Employee> list= employeeDAO.getAllEmployees();
+		System.out.println("update");
+		Employee emp=employeeDAO.getEmployeeById(101);
+		emp.setAddress("nashik");
+		boolean update=employeeDAO.updateEmployee(emp);
+		System.out.println("after update");
+		for(Employee employee3:list)
+		{
+			System.out.println(employee3);
+		}
+********************************************************package com.cts.activity.main;
+
+import java.util.List;
+
+import com.cts.activity.bean.Employee;
+import com.cts.activity.dao.EmployeeDAO;
+import com.cts.activity.daoimpl.EmployeeDAOImpl;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		
+		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		
+//		Employee emp = employeeDAO.getEmployeeById(1);
+//		System.out.println(emp);
+		
+		Employee employee = new Employee(103, "Akhil", "Pune", 22, 567576576L, 456456.00);
+		
+		boolean status = employeeDAO.addEmployee(employee);
+//		
+//		if(status)
+//		{
+//			System.out.println("Employee Added Successfully");
+//		}else
+//		{
+//			System.out.println("Try Again");
+//		}
+		//delete the emp 
+		//Employee deleteEmployee=employeeDAO.getEmployeeById(102);
+	
+		
+		//update employee
+		
+		List<Employee> list= employeeDAO.getAllEmployees();
+		System.out.println("update");
+		Employee emp=employeeDAO.getEmployeeById(101);
+		emp.setAddress("nashik");
+		boolean update=employeeDAO.updateEmployee(emp);
+		System.out.println("after update");
+		for(Employee employee3:list)
+		{
+			System.out.println(employee3);
+		}
+***************************SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*******************************
+
+package com.cts.activity.dao;
+
+import java.util.List;
+
+import com.cts.activity.bean.Employee;
+
+public interface EmployeeDAO {
+
+	public boolean addEmployee(Employee employee);
+
+	public boolean updateEmployee(Employee employee);
+
+	public boolean deleteEmployee(Employee employee);
+
+	public Employee getEmployeeById(int id);
+
+	public List<Employee> getAllEmployees();
+
+}
+*********************************************************************************************************
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+import java.sql.PreparedStatement;
+public class Database2 {
+public static void main(String[] args) throws ClassNotFoundException,SQLException {
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.println("enter id");
+	int id=Integer.parseInt(sc.nextLine());
+	System.out.println("enter name");
+	String name=sc.nextLine();
+	System.out.println("enter salary");
+	long salary=Integer.parseInt(sc.nextLine());
+	
+		Class.forName("com.mysql.jdbc.Driver");
+		String url="jdbc:mysql://localhost:3306/cts";
+		String username="root";
+		String password="anvi@1997";
+		Connection conn =DriverManager.getConnection(url,username,password);
+		String query="insert into sai values(?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(query);
+		ps.setInt(1,id);
+		ps.setString(2,name);
+		ps.setLong(4,salary);
+		int result=ps.executeUpdate();
+		if(result>0)
+		{
+			System.out.println("inserted");
+		}
+		else
+		{
+			System.out.println("try");
+		}
+
+}
+}
