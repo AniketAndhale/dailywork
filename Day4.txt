@@ -1,0 +1,113 @@
+/*StringBuffer
+package aniket12;
+
+public class Buffer1 {
+public static void main(String[] args) {
+	StringBuffer b=new StringBuffer();
+	 System.out.println(b.capacity());
+	 System.out.println(b.append("aniketthoripakkamasss"));
+	 System.out.println(b.capacity());
+	 System.out.println(b.insert(5,"d"));
+	 System.out.println(b.replace(2, 5, "wwww"));
+	System.out.println(b.delete(7,9));
+
+}
+}
+***************************************************************************************
+package aniket12;
+
+public class Alpha {
+	public static void main(String[] args) {
+		 String name= new String("aniket");
+		 String adress= new String("metukuppam"); 
+		 String adress1= new String("maha"); 
+		 String name3=new String("hydra");
+		 String name1=new String ("anu");
+		 System.out.println(name==name3);
+		 String name2="thoripakkam";
+		 String name4="thoripakkam";
+		 System.out.println(name2==name4);
+		 System.out.println(name.contentEquals(name2));
+		 System.out.println(adress==adress1);
+	
+		 String date="Thursday 9 january 2020";
+		 for(int i=0;i<date.length();i++) 
+		 {
+		 String[] d1=date.split("\\d");
+				 
+		 		System.out.println(d1[i]);
+	}
+	}
+
+}
+***********************************************************************************************
+package aniket12;
+import java.util.Scanner;
+public class Subject {
+	public static void main(String[] args) {
+		StringBuffer b=new StringBuffer();
+		int price=0;
+	
+	System.out.println("java	500 ");
+	System.out.println("c	700");
+	System.out.println("c++ 	800 ");
+	System.out.println("python   900 ");
+	System.out.println("angular  600 ");
+	String choice=new String();
+	Scanner in=new Scanner(System.in);
+	String course=in.nextLine();
+	if(course.contains("java"))
+	{
+		b.append("java     500");
+		price=price+500;
+	}
+	
+	if(course.contains("c"))
+	{
+		b.append("c			700");
+		price=price+700;
+	}
+	if(course.contains("c++"))
+	{
+		b.append("c++     	800");
+		price=price+800;
+	}
+	if(course.contains("python"))
+	{
+		b.append("python     900");
+		price=price+900;
+	}
+	if(course.contains("angular"))
+	{
+		b.append("angular     600");
+		price=price+600;
+	}
+
+	
+	System.out.println(price);
+	
+	}
+
+}
+***********************************************************************************
+package aniket12;
+
+public class Batch {
+	
+	
+	public static void main(String[] args) {
+		StringBuffer sb=new StringBuffer();
+		String s="Global Warming";
+		
+		System.out.println(s.substring(10));//a
+		System.out.println(s.substring(4,8));//b
+		System.out.println(s.indexOf("Wa"));//f
+		System.out.println(s.toLowerCase());//g
+		System.out.println(s.replace("a","*"));//i
+		System.out.println(s.matches("[a-zA-Z0-9]+"));//c
+		System.out.println(s.substring(3,14));//e
+		System.out.println(s.substring(0,s.length()-4));//d
+	}
+	
+
+}
