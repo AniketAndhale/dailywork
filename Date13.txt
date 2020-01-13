@@ -1,0 +1,282 @@
+package aniket12;
+import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
+public class Fileh3 {
+	public static void main(String[] args) throws IOException {
+	
+		//path interface,which is used to create path
+		FileSystem fs =FileSystems.getDefault();
+		//Path path =fs.getPath("C:\\Users\\Dell\\Desktop\\Aniket");
+		Path path =Paths.get("C:\\Users\\Dell\\Desktop\\Aniket");
+		Path out =Path.get("C:\Users\Dell\Desktop\program");
+		System.out.println("name cout:"+path.getNameCount());
+		System.out.println("is Absolute : "+path.isAbsolute());
+		System.out.println("name on Index 2 : "+path.getName(2));
+		//Files files =Files.createFile("C:\\Users\\Dell\\Desktop\\Aniket");
+		Files.createFile(path);
+		Files.createDirectory(path);
+		File.
+		Files.exists(path);
+		Files.notExists(path);
+		Files.copy(path, out);
+	
+	}
+
+}
+**************************************************************************
+package aniket12;
+
+public class ThreadDemo {
+	public static void main(String[] args) {
+		Thread thread =Thread.currentThread();
+		System.out.println(thread);
+		System.out.println("Thread Name: "+thread.getName());
+		thread.setName("cts Thread");
+		System.out.println(thread.getName());
+		System.out.println("is thread daemon: "+thread.isDaemon());
+		System.out.println("is thread Alive: "+thread.isAlive());
+		System.out.println("thread state: "+thread.getState());
+		System.out.println("thread id: "+thread.getId());
+	}
+
+}
+package aniket12;
+
+public class ThreadDemo2 {
+	public static void main(String[] args) {
+		
+		System.out.println("main Thread");//By main thread------only 1 thread
+		FirstThread fs=new FirstThread();
+		fs.start();//it will automatically run()
+		
+		SecondThread fs1=new SecondThread();
+		fs1.start();
+	
+
+		}
+	}
+
+
+class FirstThread extends Thread
+{
+	
+	public void run()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i%2 !=0)
+			{
+			System.out.println("first thread : "+i);
+			}
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		}
+	}
+}
+
+class SecondThread extends Thread
+{
+	
+	public void run()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i%2==0)
+			{
+				System.out.println("second thread");
+			}
+			}
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		}
+	
+}
+*******************************************************************************
+package aniket12;
+
+public class ThreadDemo3 {
+public static void main(String[] args) {
+	System.out.println("main thread");
+	Thread t=Thread.currentThread();
+	t.setPriority(Thread.MAX_PRIORITY-2);
+	FirstThre fs=new FirstThre();
+	SecondThre ss=new SecondThre();
+	Thread t1=new Thread(fs);
+	Thread t2=new Thread(ss);
+	t2.setPriority(Thread.MIN_PRIORITY+2);
+	t1.start();
+	t2.start();
+	System.out.println("First thread priority:"+t1.getPriority());
+	System.out.println("First thread priority:"+t2.getPriority());
+	
+}
+}
+	class FirstThre implements Runnable
+	{
+		
+		public void run()
+		{
+			for(int i=1;i<=10;i++)
+			{
+				if(i%2 !=0)
+				{
+				System.out.println("first thread : "+i);
+				}
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			}
+		}
+	}
+
+
+	class SecondThre implements Runnable
+	{
+		
+		public void run()
+		{
+			for(int i=1;i<=10;i++)
+			{
+				if(i%2==0)
+				{
+					System.out.println("second thread : "+i);
+				}
+				}
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			}
+		
+	}
+	
+	
+	
+	
+	
+	class Resourse
+	{
+		public static void main(String[] args) {
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println(message+""+i);
+			}
+		}
+	}
+************************************************************************************************************8
+package aniket12;
+class Resourse1
+{
+public static void main(String[] args) {
+	Resourse resourse=new Resourse();
+	System.out.println("main thread");
+	Thread t=Thread.currentThread();
+	FirstThr fs=new FirstThr(resourse);
+	SecondThr ss=new SecondThr(resourse);
+	Thread t1=new Thread(fs);
+	Thread t2=new Thread(ss);
+	t1.start();
+	t2.start();
+}
+}
+
+
+class FirstThr implements Runnable
+{
+	Resourse resourse;
+	public FirstThr(Resourse resourse)
+	{
+		this.resourse=resourse;
+		
+	}
+	public void run()
+	{
+		resourse.display("first thread");
+	}
+}
+class SecondThr implements Runnable
+{
+	Resourse resourse;
+	public SecondThr(Resourse resourse)
+	{
+		this.resourse=resourse;
+		
+	}
+	public void run()
+	{
+		resourse.display("second thread");
+	}
+}
+
+	class Resourse
+	{
+		public void display(String message) {
+			synchronized(this) {
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println(message+""+i);
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	
+		}
+	}
+***********************************************************************************
+package aniket12;
+
+public class Lambda {
+public static void main(String[] args) {
+	//Runnable r=() ->System.out.println("I  am runnable");
+	//Thread t=new Thread(r);
+	//t.start();
+	
+	
+	//Hello hello=new Hello() {
+		//public void display() {
+			//System.out.println("this is inner class");
+	Hello h=(int a,int b)->a+b;
+System.out.println(h.add(10, 20));		
+		}
+	
+	
+	
+	//hello.display();
+	
+	//Hello h=()-> System.out.println("this is lambda");
+	//h.display();
+// }
+}
+interface Hello
+{
+	//public void display();
+	public int add(int a,int b);
+	
+}
