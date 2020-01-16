@@ -1,0 +1,14 @@
+package aniket12;
+
+import java.time.LocalDate;
+
+public class DateDemo1 {
+public static void main(String[] args) {
+		
+		LocalDate date=LocalDate.now();
+		System.out.println("today's date is :"+date);
+		int day=date.getDayOfMonth();
+		int month=date.getMonthValue();
+		int year=date.getYear();
+	}
+}

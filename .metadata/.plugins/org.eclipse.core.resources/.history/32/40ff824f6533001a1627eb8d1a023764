@@ -1,0 +1,25 @@
+package aniket12;
+
+public class Abst {
+	
+		public static void main(String[] args) {
+			Test t=new Test()
+					{
+			public void display()
+			{
+				System.out.println("ddddddd");
+			}
+					};
+			
+			t.display();
+		}
+		}
+
+
+	abstract class  Test
+	{
+		abstract void display();
+		
+	}
+
+

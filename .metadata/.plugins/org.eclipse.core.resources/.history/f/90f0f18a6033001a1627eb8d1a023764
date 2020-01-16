@@ -1,0 +1,27 @@
+package aniket12;
+
+public class Outer {
+	public static void main(String[] args) {
+		Sk.Iner i=new Sk.Iner();
+			i.display();
+	
+	}
+
+}
+class Sk
+{
+	
+			
+			int x=10;
+			static int y=5;
+			static class Iner
+			{
+				public void display() {
+				
+					System.out.println(y);
+					
+				}
+				
+
+	}
+}

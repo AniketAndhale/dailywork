@@ -1,0 +1,20 @@
+package aniket12;
+
+public class Arrrrrrr {
+	static void print() throws Exception
+	{
+		System.out.println("inside");
+		throw new Exception("demo");
+		
+	}
+public static void main(String[] args) {
+	try
+	{
+print();
+	
+	}
+	catch(Exception e) {
+		System.out.println("sssswssss");
+	}
+}
+}

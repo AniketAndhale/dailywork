@@ -1,0 +1,28 @@
+package aniket12;
+import java.util.ArrayList;
+public class EmpArr {
+
+	
+	public static void main(String[] args) {
+		ArrayList<Empp> list =new ArrayList<Empp>();
+		Empp emp1 = new Empp(201,"Aniket","maharashtra",22,9763530194L,68745.00);
+		Empp emp2 =new Empp(202,"Anu","Andhra",23,9763530194L,68745.00);
+		Empp emp3 =new Empp(203,"Abin","maharashtra",24,9763530194L,68745.00);
+		Empp emp4 =new Empp(204,"Abdus","maharashtra",22,9763530194L,68745.00);
+		Empp emp5 =new Empp(205,"sai","maharashtra",25,9763530194L,68745.00);
+		
+		list.add(emp1);
+		list.add(emp2);
+		list.add(emp3);
+		list.add(emp4);
+		list.add(emp5);
+	//	for(Empp em:list) {
+		//	System.out.println(em);
+	//	}
+		
+	}
+
+	
+
+}
+

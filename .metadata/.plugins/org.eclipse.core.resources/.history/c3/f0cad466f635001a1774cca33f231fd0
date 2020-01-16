@@ -1,0 +1,54 @@
+package aniket12;
+class Resourse1
+{
+public static void main(String[] args) {
+	Resourse resourse=new Resourse();
+	System.out.println("main thread");
+	Thread t=Thread.currentThread();
+	FirstThr fs=new FirstThr();
+	SecondThr ss=new SecondThr();
+	Thread t1=new Thread(fs);
+	Thread t2=new Thread(ss);
+	t1.start();
+	t2.start();
+}
+}
+
+
+class FirstThr implements Runnable
+{
+	Resourse resourse;
+	public FirstThr(Resourse resourse)
+	{
+		this.resourse=resourse;
+		
+	}
+	public void run()
+	{
+		System.out.println("first");
+	}
+}
+class SecondThr implements Runnable
+{
+	Resourse resourse;
+	public SecondThre(Resourse resourse)
+	{
+		this.resourse=resourse;
+		
+	}
+	public void run()
+	{
+		System.out.println("first");
+	}
+}
+
+	class Resourse
+	{
+		public void display(String message) {
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println(message+""+i);
+			}
+		}
+
+	}

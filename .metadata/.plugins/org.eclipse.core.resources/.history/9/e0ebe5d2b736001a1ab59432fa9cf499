@@ -1,0 +1,29 @@
+package aniket12;
+
+public class GeneralApI{
+public static void main(String[] args) {
+	public int add(int a,int b)
+	{
+		return a+b;
+		
+	}
+	public boolean checkEven(int num) {
+		if(num%2==0)
+		{
+			return true;
+			
+		}
+		else {
+			return false;
+		}
+	}
+	public int getfactorial(int num)
+	{
+		if(num==1)
+		{
+			return1;
+			return num*getfactorial()
+		}
+	}
+}
+}
