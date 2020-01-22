@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>paragraph one</p>
+<p>paragraph two</p>
+<div>div one</div>
+<p>paragraph three</p>
+<div>div two</div>
+<p>Aniket</p>
+<div>
+    <strong>hello</strong>
+  </div>
+<div> </div>
+<div>
+    <strong>Cognizant</strong>
+  </div>
+<button>Click Me</button>
+<script>
+var firstDiv = document.querySelectorAll('p');
+for(let d of firstDiv){
+d.style.color = 'blue';
+d.style.fontSize='50px';}
+
+// var btn = document.querySelector('button');
+// btn.onclick=foo;
+var btn = document.querySelector('button');
+// btn.addEventListener('click', foo);
+btn.removeEventListener('click',foo);
+
+
+// var btn = document.querySelector('button');
+// btn.addEventListener('click',foo);
+// function foo() { alert('hello'); }
+var pEle = document.createElement('p')
+
+
+// var div = document.querySelector('div');
+// var strong = document.createElement('strong');
+// strong.textContent = 'Hello';
+// div.appendChild(strong);
+// div.removeChild(strong);
+
+
+// var em = document.createElement('em');
+// var strong = document.querySelector('strong');
+// var div = document.querySelector('div');
+// em.textContent = 'hi';
+// div.replaceChild(em, strong);
+
+
+// var strong = document.querySelector('strong');
+// var copy = strong.cloneNode(true);
+// var div = document.querySelector('div');
+// div.appendChild(copy);
+
+var em = document.createElement('em');
+var strong = document.querySelector('strong');
+var div = document.querySelector('div');
+em.textContent = 'hi';
+div.insertBefore(em, strong);
+
+</script>
+</body>
+</html>
