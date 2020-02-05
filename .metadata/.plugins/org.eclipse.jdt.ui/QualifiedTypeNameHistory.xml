@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.time.ZonedDateTime"/>
-<fullyQualifiedTypeName name="java.time.ZoneId"/>
-<fullyQualifiedTypeName name="java.time.YearMonth"/>
-<fullyQualifiedTypeName name="java.time.Month"/>
-<fullyQualifiedTypeName name="java.time.Period"/>
-<fullyQualifiedTypeName name="java.time.ZoneOffset"/>
-<fullyQualifiedTypeName name="java.time.OffsetDateTime"/>
-<fullyQualifiedTypeName name="java.time.Instant"/>
-<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-<fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="org.junit.After"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.cts.training.model.Compny"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
 <fullyQualifiedTypeName name="javax.management.Query"/>
 <fullyQualifiedTypeName name="org.hibernate.query.Query"/>
+<fullyQualifiedTypeName name="com.cts.activity.daoimpl.UserDAOImpl"/>
+<fullyQualifiedTypeName name="com.cts.activity.dao.UserDAO"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
 </qualifiedTypeNameHistroy>
