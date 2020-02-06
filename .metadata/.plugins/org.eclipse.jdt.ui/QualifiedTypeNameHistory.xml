@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="org.junit.After"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.cts.training.model.Compny"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="com.cts.training.model.StockExchange"/>
 <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
 <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
 </qualifiedTypeNameHistroy>
