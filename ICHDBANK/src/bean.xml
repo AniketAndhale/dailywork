@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="user" class="com.cts.training.model.Customer">
+
+<property name="id" value="855"></property>
+<property name="name" value="ababa"></property>
+<property name="acno" value="85298542"></property>
+<property name="ifsc" value="dh525"></property>
+<property name="address" value="sangamner"></property>
+<property name="branch" value="ashvi"></property>
+<property name="withdraw" value="855"></property>
+<property name="deposit" value="500"></property>
+
+<property name="account">
+<bean name="account" class="com.cts.training.model.Account">
+<property name="acno" value="9ssd5"/>
+<property name="ifsc" value="fhy985"/>
+<property name="branch" value="saffg"/>
+<property name="transfer" value="98542"/>
+
+
+</bean>
+
+
+
+
+</property>
+
+</bean>
+
+</beans>

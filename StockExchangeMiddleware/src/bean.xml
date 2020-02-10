@@ -2,19 +2,51 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	
+	<!-- <bean id="address" class="com.cts.training.model.AddressEntity">
+	
+
+			
+			<property name="id" value="504"></property>
+			<property name="housenumber" value="e345"></property>
+			<property name="city" value="sangamner"></property>
+			<property name="state" value="Maharashtra"></property>
+			<property name="street" value="Vk colony"></property>
+			
+			
+			</bean> -->
 
 	<bean id="user" class="com.cts.training.model.UserEntity">
 
-		<!-- <property name="id" value="101"/> <property name="username" value="admin"/> 
+		<property name="id" value="101"/> <property name="username" value="admin"/> 
 			<property name="password" value="101"/> <property name="email" value="101"/> 
-			<property name="phone" value="185445455"/> <property name="enabled" value="true"/> -->
-		<constructor-arg value="102" name="id" type="int" />
+			<property name="phone" value="185445455"/> <property name="enabled" value="true"/> 
+			<property name="address" ref="address">
+			
+			<!-- <property name="address">
+			<bean name="address" class="com.cts.training.model.AddressEntity">
+			<property name="id" value="504"></property>
+			<property name="housenumber" value="e345"></property>
+			<property name="city" value="sangamner"></property>
+			<property name="state" value="Maharashtra"></property>
+			<property name="street" value="Vk colony"></property>
+			
+			
+			</bean>
+			
+			 -->
+			</property>
+			
+			
+		<!-- <constructor-arg value="102" name="id" type="int" />
 		<constructor-arg value="user" name="username" />
 		<constructor-arg value="passw8d" name="password" />
 		<constructor-arg value="user@s" name="email" />
 		<constructor-arg value="85565" name="phone" />
 		<constructor-arg value="true" name="isEnable" />
+		 -->
 
-	</bean>
+</bean>
 
 </beans>

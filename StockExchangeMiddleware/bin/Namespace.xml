@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- <bean id="address" class="com.cts.training.model.AddressEntity"
+	 p:id="112" p:housenumber="5225" p:street="street no 1" p:city="sangamnert" p:state="maharashtra"></bean>
+	 -->
+	 
+	 
+	  <bean id="address" class="com.cts.training.model.AddressEntity" 
+	   c:id="112" c:housenumber="5225" c:street="street no 1" c:city="sangamnert" c:state="maharashtra"></bean>
+	  
+	  
+	 
+<!-- <bean id="user" class="com.cts.training.model.UserEntity" 
+p:id="111" p:username="trfvybu" p:password="jhgf" p:email="hgf@wd" p:enabled="true" p:address-ref="address"></bean>
+ -->
+ 
+  <bean id="user" class="com.cts.training.model.UserEntity" 
+c:id="111" c:username="trfvybu" c:password="jhgf" c:email="hgf@wd" c:enabled="true" c:phone="59955"  c:boolean="true"></bean>
+ 
+</beans>

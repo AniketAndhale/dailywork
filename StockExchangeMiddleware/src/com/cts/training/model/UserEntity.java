@@ -1,7 +1,12 @@
 package com.cts.training.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+//the bean name will be pojo class name start with small letter
+@Component
 public class UserEntity implements Serializable {
 	/**
 	 * 
@@ -10,27 +15,28 @@ public class UserEntity implements Serializable {
 	private int id;
 	private String username;
 	private String password;
-	private String email;
+	private List<String> email;
 	private long phone;
 	private boolean enabled;
+	private AddressEntity address;
 	
 	
 	public UserEntity() {
 		
 	}
-	
 
 
-	public UserEntity(int id, String username, String password, String email, long phone, boolean isEnable) {
+	public UserEntity(int id, String username, String password, List<String> email, long phone, boolean enabled,
+			AddressEntity address) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.phone = phone;
-		this.enabled=enabled;
+		this.enabled = enabled;
+		this.address = address;
 	}
-
 
 
 	public int getId() {
@@ -63,12 +69,12 @@ public class UserEntity implements Serializable {
 	}
 
 
-	public String getEmail() {
+	public List<String> getEmail() {
 		return email;
 	}
 
 
-	public void setEmail(String email) {
+	public void setEmail(List<String> email) {
 		this.email = email;
 	}
 
@@ -83,27 +89,36 @@ public class UserEntity implements Serializable {
 	}
 
 
-	
-
-
 	public boolean isEnabled() {
 		return enabled;
 	}
 
-  
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 
 
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(AddressEntity address) {
+		this.address = address;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 
 	@Override
 	public String toString() {
 		return "UserEntity [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", phone=" + phone + ", enabled=" + enabled + "]";
+				+ ", phone=" + phone + ", enabled=" + enabled + ", address=" + address + "]";
 	}
 	
-	
+
 
 }
