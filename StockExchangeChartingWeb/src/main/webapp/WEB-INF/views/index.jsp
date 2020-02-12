@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <body>
+<%-- <a href="user-home">User</a>
 	
 	
 	<hr> 
@@ -34,6 +35,6 @@
 	
 	</c:forEach>
 	
-	</table>
+	</table> --%>
 </body>
 </html>

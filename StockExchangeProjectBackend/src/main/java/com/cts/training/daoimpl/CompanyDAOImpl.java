@@ -3,26 +3,28 @@ package com.cts.training.daoimpl;
 import java.util.List;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
+
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
-import com.cts.activity.hibernate.HibernateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+
 import com.cts.training.bean.Company;
-import com.cts.training.dao.CompanyDAO.dao.CompanyDAO;
 
-public class CompanyDAOImpl implements CompanyDAO{
 
-	SessionFactory sessionFactory=HibernateUtil.getSessionFactory();
+
+@Transactional
+@Repository(value="companyDAO")
+public class CompanyDAOImpl implements com.cts.training.dao.CompanyDAO{
+	@Autowired
+	SessionFactory sessionFactory;
 	
 	@Override
-	public boolean saveCompany(Company company) {
+	public boolean saveOrUpdatCompany(Company company) {
 		try {
-			Session session=sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			session.save(company);
-			tx.commit();
-			session.close();
+			sessionFactory.getCurrentSession().saveOrUpdate(company);
 			return true;
 		}catch (HibernateException e) {
 			System.out.println("Exception: "+e.getMessage());
@@ -30,29 +32,21 @@ public class CompanyDAOImpl implements CompanyDAO{
 		}
 	}
 
-	@Override
-	public boolean updateCompany(Company company) {
-		try {
-			Session session=sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			session.update(company);
-			tx.commit();
-			session.close();
-			return true;
-		}catch (HibernateException e) {
-			System.out.println("Exception: "+e.getMessage());
-			return false;
-		}
-	}
+//	@Override
+//	public boolean updateCompany(Company company) {
+//		try {
+//			sessionFactory.getCurrentSession().update(company);
+//			return true;
+//		}catch (HibernateException e) {
+//			System.out.println("Exception: "+e.getMessage());
+//			return false;
+//		}
+//	}
 
 	@Override
 	public boolean removeCompany(Company company) {
 		try {
-			Session session=sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			session.delete(company);
-			tx.commit();
-			session.close();
+			sessionFactory.getCurrentSession().delete(company);
 			return true;
 		}catch (HibernateException e) {
 			System.out.println("Exception: "+e.getMessage());
@@ -63,13 +57,7 @@ public class CompanyDAOImpl implements CompanyDAO{
 	@Override
 	public Company getCompanyById(int id) {
 		try {
-			Session session=sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			Company company=session.get(Company.class, id);
-			session.update(company);
-			tx.commit();
-			session.close();
-			return company;
+			return	sessionFactory.getCurrentSession().get(Company.class, id);
 		}catch (HibernateException e) {
 			System.out.println("Exception: "+e.getMessage());
 			return null;
@@ -80,11 +68,7 @@ public class CompanyDAOImpl implements CompanyDAO{
 	@Override
 	public List<Company> getAllCompanies() {
 		try {
-			Session session=sessionFactory.openSession();
-			Transaction tx=session.beginTransaction();
-			List<Company> companies=session.createQuery("FROM Company").list();
-			tx.commit();
-			session.close();
+			List<Company> companies=sessionFactory.getCurrentSession().createQuery("FROM Company").list();
 			return companies;
 		}catch (HibernateException e) {
 			System.out.println("Exception: "+e.getMessage());

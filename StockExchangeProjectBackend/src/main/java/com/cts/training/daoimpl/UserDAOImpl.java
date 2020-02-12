@@ -21,9 +21,9 @@ public class UserDAOImpl implements UserDAO{
 	SessionFactory sessionFactory;
 
 	@Override
-	public boolean saveUser(User user) {
+	public boolean saveOrUpdateUser(User user) {
 		try {
-			sessionFactory.getCurrentSession().save(user);
+			sessionFactory.getCurrentSession().saveOrUpdate(user);
 			return true;
 		} catch (HibernateException e) {
 			System.out.println("Exception: "+e.getMessage());
@@ -31,16 +31,16 @@ public class UserDAOImpl implements UserDAO{
 		}
 	}
 
-	@Override
-	public boolean updateUser(User user) { 
-		try {
-			sessionFactory.getCurrentSession().update(user);
-			return true;
-		} catch (HibernateException e) {
-			System.out.println("Exception: "+e.getMessage());
-			return false;
-		}
-	}
+//	@Override
+//	public boolean updateUser(User user) { 
+//		try {
+//			sessionFactory.getCurrentSession().update(user);
+//			return true;
+//		} catch (HibernateException e) {
+//			System.out.println("Exception: "+e.getMessage());
+//			return false;
+//		}
+//	}
 
 	@Override
 	public boolean removeUser(User user) {
