@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.persistence.Query"/>
-<fullyQualifiedTypeName name="javax.management.Query"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
@@ -28,11 +25,8 @@
 <fullyQualifiedTypeName name="com.cts.activity.dao.UserDAO"/>
 <fullyQualifiedTypeName name="com.cts.activity.daoimpl.UserDAOImpl"/>
 <fullyQualifiedTypeName name="com.cts.activity.bean.User"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.annotation.EnableTransactionManagement"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
 <fullyQualifiedTypeName name="org.springframework.orm.hibernate5.LocalSessionFactoryBean"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="org.hibernate.query.Query"/>
 <fullyQualifiedTypeName name="org.junit.BeforeClass"/>
@@ -45,7 +39,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="com.cts.training.bean.User"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="com.cts.training.dao.CompanyDAO"/>
 <fullyQualifiedTypeName name="com.cts.training.bean.Company"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ViewResolver"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.EnableWebMvc"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 </qualifiedTypeNameHistroy>

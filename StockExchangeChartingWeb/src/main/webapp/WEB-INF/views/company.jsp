@@ -14,7 +14,7 @@
 	<c:url var="companyUrl" value="/company/save" />
 <form:form action="${companyUrl }" modelAttribute="company">
 	<table>
-	<c:if test="${!empty company.companyname }">
+	<c:if test="${!empty company.name }">
 				<tr>
 					<td><form:label path="id">Id</form:label></td>
 					<td><form:input path="id" readonly="true" disabled="true" /></td>
@@ -33,14 +33,14 @@
 			<td><form:label path="ceo">CEO</form:label></td>
 			<td><form:input path="ceo" /></td>
 		</tr>
-		<tr>
+		<%-- <tr>
 			<td><form:label path="board_of_directors">boardofdirectory</form:label></td>
 			<td><form:input path="board_of_directors" /></td>
 		</tr>
 		<tr>
 			<td><form:label path="listed_in_stock_exchanges">listedinstockexchanges</form:label></td>
 			<td><form:input path="listed_in_stock_exchanges" /></td>
-		</tr>
+		</tr> --%>
 		<tr>
 			<td><form:label path="sector">Sector</form:label></td>
 			<td><form:input path="sector" /></td>
@@ -63,9 +63,9 @@
 		</tr> -->
 		<tr>
 		<td></td>
-				<td><c:if test="${empty company.companyname }">
+				<td><c:if test="${empty company.name }">
 						<input type="submit" value="Register">
-					</c:if> <c:if test="${!empty company.companyname }">
+					</c:if> <c:if test="${!empty company.name }">
 						<input type="submit" value="Update">
 					</c:if></td>
 			</tr>
@@ -80,8 +80,8 @@
 	<th>name</th>
 	<th>turnover</th>
 	<th>ceo</th>
-	<th>board_of_directors</th>
-	<th>listed_in_stock_exchanges</th>
+	<!-- <th>board_of_directors</th>
+	<th>listed_in_stock_exchanges</th> -->
 	<th>sector</th>
 	<th>brief</th>
 	<th>stock_code</th>
@@ -94,15 +94,13 @@
 	<td>${company.name }</td>
 	<td>${company.turnover}</td>
 	<td>${company.ceo}</td>
-	<td>${company.board_of_directors }</td>
-	<td>${company.listed_in_stock_exchanges }</td>
 	<td>${company.sector }</td>
 	<td>${company.brief }</td>
 	<td>${company.stock_code}</td>
 	<td>${company.activated }
 
-	<td><a href="<c:url value='/remove/${company.id }' />">Remove</a>|
-	<a href="<c:url value='/update/${company.id }' />">Update</a></td>
+	<td><a href="<c:url value='/delete/${company.id }' />">Delete</a>|
+	<a href="<c:url value='/update1/${company.id }' />">Update</a></td>
 	
 	</tr>
 	
@@ -111,4 +109,4 @@
 	</table>
 	</div>
 </body>
-</html>
+</html> 

@@ -3,6 +3,7 @@ package com.cts.training.middle.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.cts.training.bean.Company;
 import com.cts.training.dao.CompanyDAO;
 
+@Controller
 public class CompanyController {
 
 	@Autowired
@@ -23,7 +25,7 @@ public class CompanyController {
 	{
 		List<Company> companies = companyDAO.getAllCompanies();
 		model.addAttribute("list", companies);
-		model.addAttribute("user", new Company());
+		model.addAttribute("company", new Company());
 
 		return "company";
 
@@ -36,7 +38,7 @@ public class CompanyController {
 		return "redirect:/company-home";
 	}
 
-	@GetMapping("/remove/{id}")
+	@GetMapping("/delete/{id}")
 	public String deleteuser(@PathVariable("id") int id) {
 		Company company = companyDAO.getCompanyById(id);
 		companyDAO.removeCompany(company);
@@ -44,7 +46,7 @@ public class CompanyController {
 		return "redirect:/company-home";
 	}
 
-	@GetMapping("/update/{id}")
+	@GetMapping("/update1/{id}")
 	public String updateUser(@PathVariable("id") int id, Model model) {
 		Company company = companyDAO.getCompanyById(id);
 		List<Company> company1 = companyDAO.getAllCompanies();

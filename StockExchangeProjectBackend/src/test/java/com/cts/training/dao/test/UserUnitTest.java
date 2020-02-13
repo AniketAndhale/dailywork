@@ -39,23 +39,23 @@ public class UserUnitTest {
 	
 	
 	}
-	@Ignore
-	@Test
-	public void test_update_user_success()
-	{
-		User user = userDAO.getUserById(1);
-		user.setConfirmed(false);
-		assertEquals(true, userDAO.updateUser(user));
-	}
-	
-	
-	@Test
-	
-	public void test_add_User()
-	{
-		User user=new User(1, "anikwt", "anjh", true, "ani@123", 1555652, true, 85);
-		assertEquals(true, userDAO.saveUser(user));
-	}
+//	@Ignore
+//	@Test
+//	public void test_update_user_success()
+//	{
+//		User user = userDAO.getUserById(1);
+//		user.setConfirmed(false);
+//		assertEquals(true, userDAO.updateUser(user));
+//	}
+//	
+//	
+//	@Test
+//	
+//	public void test_add_User()
+//	{
+//		User user=new User(1, "anikwt", "anjh", true, "ani@123", 1555652, true, 85);
+//		assertEquals(true, userDAO.saveUser(user));
+//	}
 	
 	@Test
 	@Ignore
