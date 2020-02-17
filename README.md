@@ -160,3 +160,15 @@ Day 38
 	Filter
 	Through Xml
 	Through Java Cponfiguration
+Day 39
+-------
+	Internal hackathon
+Day 40
+---------
+	spring securitry using database
+	Sql queries
+		1.groupby
+		2.subqueries
+		3.joins
+		4.Exist keyword
+		5.correlated queries.
