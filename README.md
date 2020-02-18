@@ -172,3 +172,9 @@ Day 40
 		3.joins
 		4.Exist keyword
 		5.correlated queries.
+Day 41
+--------------
+		PLSQl
+		1.Trigger
+		2.Procedure
+		3.cursor
