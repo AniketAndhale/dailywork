@@ -195,6 +195,16 @@ Day 44
 Day 45
 ----------
 		ProjectWork
+		
 Day 46
 ---------
 		ProjectWork
+		Mail concept
+Day 47
+----------
+		kBA
+		project work
+Day 48
+-----------
+		mail concept
+		integration of angular and spring boot in project
