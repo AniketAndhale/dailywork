@@ -1,18 +1,17 @@
-package com.cts.training.companyservice;
+package com.cts.training.netfixzuulapigatewayserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-
-@EnableFeignClients
 @EnableDiscoveryClient
+@EnableZuulProxy
 @SpringBootApplication
-public class CompanyServiceApplication {
+public class NetfixZuulApiGatewayServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CompanyServiceApplication.class, args);
+		SpringApplication.run(NetfixZuulApiGatewayServerApplication.class, args);
 	}
 
 }

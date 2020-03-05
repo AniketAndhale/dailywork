@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class CompanyController {
+	@Autowired
+	UserServiceProxy proxy;
 
 	@Autowired
 	CompanyRepo companyrepo;
@@ -49,6 +51,13 @@ public class CompanyController {
 		String comp = companyservice.Update(company);
 				
 		return comp;
+	}
+	
+	@RequestMapping(value = "/users-by-company", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Users> findAllUserscompany(){
+		return proxy.findAll();
+	
+		
 	}
 }
 

@@ -52,7 +52,7 @@ public class StockExchangeImpl implements StockExchangeService{
 
 	{
 		StockExchange stockexchange1 = new StockExchange();
-		BeanUtils.copyProperties(stockexchange1, stockexchange1);
+		BeanUtils.copyProperties(stockexchange, stockexchange1);
 		stockexchange1=stockexchangerepo.save(stockexchange1);
 		if(stockexchange1!=null) {
 		return "{\"res\":\"1\"}";}

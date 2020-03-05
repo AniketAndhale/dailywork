@@ -8,59 +8,54 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-
 @Service
-public class CompanyServiceImpl implements CompanyService{
-	
+public class CompanyServiceImpl implements CompanyService {
+
 	@Autowired
 	CompanyRepo companyrepo;
 	@Autowired
 	JavaMailSender jms;
-	
-@Override
+
+	@Override
 	public String addCompany(Company company) {
-		Company company1 =new Company();
-		BeanUtils.copyProperties(company1, company1);
-		company1=companyrepo.save(company1);
-		if(company1!=null) {
+		Company company1 = new Company();
+		BeanUtils.copyProperties(company, company1);
+		company1 = companyrepo.save(company1);
+		if (company1 != null) {
 			return "{\"res\":\"1\"}";
-		}
-		else {
+		} else {
 			return "{\"res\":\"0\"}";
 		}
 	}
-	
-@Override
+
+	@Override
 	public void remove(int id) {
 		companyrepo.deleteById(id);
 	}
-	
-	
+
 	public List<Company> getAllCompany() {
 		return companyrepo.findAll();
 	}
-	
-@Override
+
+	@Override
 	public Company getOne(int id) {
 		Optional<Company> comp = companyrepo.findById(id);
 		Company company = comp.get();
 		return company;
 	}
-		
-@Override 
-	public String  Update(Company companydto)
+
+	@Override
+	public String Update(Company companydto)
 
 	{
 		Company company = new Company();
 		BeanUtils.copyProperties(companydto, company);
-		company=companyrepo.save(company);
-		if(company!=null) {
-		return "{\"res\":\"1\"}";}
-		else {
+		company = companyrepo.save(company);
+		if (company != null) {
+			return "{\"res\":\"1\"}";
+		} else {
 			return "{\"res\":\"0\"}";
 		}
 	}
-
-
 
 }
