@@ -218,3 +218,30 @@ Day 50
 Day-51
 -----------
 		microservices advance
+Day 52
+02-03-2020
+-------
+	Microservices
+	project work
+Day 53
+03-03-2020
+-------
+	spring cloud-starter
+	ribbon
+	feign basics
+	netflix eureka
+Day 54
+04-03-2020
+---------
+	Spring Boot Junit Testing
+Day 55
+05-03-2020
+----------
+	Netflix-zuul
+	api gateway
+	project work
+Day 56
+06-03-2020
+-----------
+	Docker
+	project work
