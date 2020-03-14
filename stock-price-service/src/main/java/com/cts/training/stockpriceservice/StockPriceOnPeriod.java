@@ -1,16 +1,15 @@
-//package com.cts.training.stockpriceservice;
-//
-//public class StockPriceOnPeriod {
-//
-//}
+
 package com.cts.training.stockpriceservice;
+
+import java.time.LocalDate;
+
 public class StockPriceOnPeriod {
 	private String companyCode;
 	private String stockExchange;
-	private String dataPoint;//day month or year
+	private LocalDate dataPoint;//day month or year
 	private double dataValue;//avg price for that year
 	public StockPriceOnPeriod() {}
-	public StockPriceOnPeriod(String companyCode, String stockExchange, String dataPoint, double dataValue) {
+	public StockPriceOnPeriod(String companyCode, String stockExchange, LocalDate dataPoint, double dataValue) {
 		super();
 		this.companyCode = companyCode;
 		this.stockExchange = stockExchange;
@@ -29,10 +28,10 @@ public class StockPriceOnPeriod {
 	public void setStockExchange(String stockExchange) {
 		this.stockExchange = stockExchange;
 	}
-	public String getDataPoint() {
+	public LocalDate getDataPoint() {
 		return dataPoint;
 	}
-	public void setDataPoint(String dataPoint) {
+	public void setDataPoint(LocalDate dataPoint) {
 		this.dataPoint = dataPoint;
 	}
 	public double getDataValue() {
@@ -41,9 +40,5 @@ public class StockPriceOnPeriod {
 	public void setDataValue(double dataValue) {
 		this.dataValue = dataValue;
 	}
-	@Override
-	public String toString() {
-		return "StockPriceOnPeriod [companyCode=" + companyCode + ", stockExchange=" + stockExchange + ", dataPoint="
-				+ dataPoint + ", dataValue=" + dataValue + "]";
-	}
+	
 }

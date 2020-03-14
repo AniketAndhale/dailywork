@@ -1,6 +1,7 @@
 package com.cts.training.stockpriceservice;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,14 @@ public class StockPriceRestServiceController {
 	StockPriceRepo stockPriceRepo;
 	@Autowired
 	StockPriceService stockPriceService;
+	
+	
+	@GetMapping(value="/stockPrice/companyStockPriceBetween/{companyCode}/{stockExchange}/{startDate}/{endDate}",
+			produces="application/json")
+	public ResponseEntity<?> getCompanyStockPriceDayBetween(@PathVariable String companyCode,
+			@PathVariable String stockExchange, @PathVariable String startDate, @PathVariable String endDate){
+		return new ResponseEntity<List<StockPriceOnPeriod>>(stockPriceService.getCompanyStockPriceBetween(companyCode, stockExchange, LocalDate.parse(startDate), LocalDate.parse(endDate)),HttpStatus.OK);
+	}
 	
 	@RequestMapping(value="/stockprice",method= RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<StockPrice> findAll() {
